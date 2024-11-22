@@ -1,0 +1,30 @@
+add_library(test_depending include/test_depending/test_depending.h src/test_depending.cpp src/test_private.h src/test_private.cpp)
+target_include_directories(
+    test_depending
+        PUBLIC
+            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+            $<INSTALL_INTERFACE:include>    
+)
+find_package(test_static)
+find_package(test_interface)
+
+target_link_libraries(
+    test_depending
+        INTERFACE test_interface::test_interface
+        PRIVATE test_static::test_static
+)
+
+install(
+    TARGETS test_depending
+        EXPORT test_depending-config
+        ARCHIVE DESTINATION lib/$<CONFIGURATION>
+)
+install(
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
+    DESTINATION include
+)
+install(
+    EXPORT test_depending-config
+        NAMESPACE test_depending::
+        DESTINATION lib/cmake/test_depending
+)
