@@ -2,4 +2,7 @@ cmake_minimum_required(VERSION 3.30)
 set(CMAKE_CXX_STANDARD 20)
 project(test_depending)
 
+#define_property(GLOBAL PROPERTY CMAKE_EXPERIMENTAL_EXPORT_PACKAGE_DEPENDENCIES)
+set(CMAKE_EXPERIMENTAL_EXPORT_PACKAGE_DEPENDENCIES 1942b4fa-b2c5-4546-9385-83f254070067)
+
 add_subdirectory(test_depending)
