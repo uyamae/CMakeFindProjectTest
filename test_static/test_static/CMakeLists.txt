@@ -9,7 +9,7 @@ target_include_directories(
 install(
     TARGETS test_static
         EXPORT test_static-config
-        ARCHIVE DESTINATION lib
+        ARCHIVE DESTINATION lib/$<CONFIGURATION>
 )
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
