@@ -30,7 +30,6 @@ install(
 install(
     EXPORT test_depending-config
         NAMESPACE test_depending::
-        DESTINATION lib/cmake
+        DESTINATION lib/cmake/test_depending
         EXPORT_PACKAGE_DEPENDENCIES
 )
-#        DESTINATION lib/cmake/test_depending

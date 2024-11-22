@@ -2,9 +2,7 @@
 pushd %~dp0
 
 :: for find_package
-pushd ..\shared\lib\cmake
-::set test_static_DIR=%CD%\test_static
-::set test_interface_DIR=%CD%\test_interface
+pushd ..\shared
 set CMAKE_PREFIX_PATH=%CD%
 popd
 
@@ -23,13 +21,13 @@ cmake --build build
 if errorlevel 1 goto :err
 
 pushd ..
-set PREFIX=%CD%\shared
+set SHARED=%CD%\shared
 popd
 
 echo ===============================================================================
 echo  install
 echo ===============================================================================
-cmake --install build --prefix=%PREFIX% --config=Debug
+cmake --install build --prefix=%SHARED%/test_depending --config=Debug
 if errorlevel 1 goto :err
 
 :end

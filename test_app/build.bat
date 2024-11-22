@@ -2,10 +2,7 @@
 pushd %~dp0
 
 :: for find_package
-pushd ..\shared\lib\cmake
-::set test_static_DIR=%CD%\test_static
-::set test_interface_DIR=%CD%\test_interface
-::set test_depending_DIR=%CD%\test_depending
+pushd ..\shared
 set CMAKE_PREFIX_PATH=%CD%
 popd
 

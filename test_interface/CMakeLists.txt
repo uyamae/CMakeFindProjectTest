@@ -16,9 +16,8 @@ install(TARGETS test_interface EXPORT test_interface-config)
 install(
     EXPORT test_interface-config
         NAMESPACE test_interface::
-        DESTINATION lib/cmake
+        DESTINATION lib/cmake/test_interface
 )
-#        DESTINATION lib/cmake/test_interface
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
     DESTINATION include

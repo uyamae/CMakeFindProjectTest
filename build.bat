@@ -1,5 +1,8 @@
 @echo off
 cd /d %~dp0
+
+if exist shared rmdir /S /Q shared
+
 call test_static/build.bat
 if errorlevel 1 goto :end
 

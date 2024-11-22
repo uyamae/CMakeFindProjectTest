@@ -8,10 +8,10 @@ cmake --build build
 if errorlevel 1 goto :err
 
 pushd ..
-set PREFIX=%CD%\shared
+set SHARED=%CD%\shared
 popd
 
-cmake --install build --prefix=%PREFIX% --config=Debug
+cmake --install build --prefix=%SHARED%/test_interface --config=Debug
 if errorlevel 1 goto :err
 
 popd

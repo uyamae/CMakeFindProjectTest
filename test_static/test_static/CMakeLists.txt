@@ -20,6 +20,5 @@ install(
 install(
     EXPORT test_static-config
         NAMESPACE test_static::
-        DESTINATION lib/cmake
+        DESTINATION lib/cmake/test_static
 )
-#        DESTINATION lib/cmake/test_static
