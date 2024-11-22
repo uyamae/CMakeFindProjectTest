@@ -1,9 +1,9 @@
-add_library(test_static include/test_static.h src/test_static.cpp src/test_private.h src/test_private.cpp)
+add_library(test_static include/test_static/test_static.h src/test_static.cpp src/test_private.h src/test_private.cpp)
 target_include_directories(
     test_static
         PUBLIC
-            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/test_static>
-            $<INSTALL_INTERFACE:include/test_static>
+            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+            $<INSTALL_INTERFACE:include>
 )
 
 install(

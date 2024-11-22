@@ -1,4 +1,4 @@
-﻿#include "test_static.h"
+﻿#include "test_static/test_static.h"
 #include "test_private.h"
 
 namespace test_static {
